@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\BloombergLP.Sable.Samples.Core\BloombergLP.Sable.Samples.Core.csproj" />
+    </ItemGroup>
+
+</Project>

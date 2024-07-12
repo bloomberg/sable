@@ -1,0 +1,8 @@
+<Project>
+
+  <PropertyGroup Label="Build">
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+</Project>

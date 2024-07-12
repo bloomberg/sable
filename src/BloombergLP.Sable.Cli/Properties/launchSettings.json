@@ -1,0 +1,68 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Help": {
+      "commandName": "Project",
+      "commandLineArgs": "help",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
+    },
+    "InitializeInfrastructure": {
+      "commandName": "Project",
+      "commandLineArgs": "init  --project ..\\..\\..\\..\\..\\samples\\Sable.Samples.GettingStarted\\Sable.Samples.GettingStarted.csproj  --schema books ",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
+    },
+    "AddMigrationNoTransactionWrapper": {
+      "commandName": "Project",
+      "commandLineArgs": "migrations add  M4 --project ..\\..\\..\\..\\..\\samples\\Sable.Samples.GettingStarted\\Sable.Samples.GettingStarted.csproj --no-transaction-wrapper",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
+    },
+    "AddMigrationNoIdempotenceWrapper": {
+      "commandName": "Project",
+      "commandLineArgs": "migrations add  M3 --project ..\\..\\..\\..\\..\\samples\\Sable.Samples.GettingStarted\\Sable.Samples.GettingStarted.csproj --no-idempotence-wrapper",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
+    },
+    "AddMigrationNoIdempotenceWrapperNoTransactionWrapper": {
+      "commandName": "Project",
+      "commandLineArgs": "migrations add  M2 --project ..\\..\\..\\..\\..\\samples\\Sable.Samples.GettingStarted\\Sable.Samples.GettingStarted.csproj --no-idempotence-wrapper --no-transaction-wrapper",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
+    },
+    "AddMigration": {
+      "commandName": "Project",
+      "commandLineArgs": "migrations add  M2 --project ..\\..\\..\\..\\..\\samples\\Sable.Samples.GettingStarted\\Sable.Samples.GettingStarted.csproj",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
+    },
+    "BackfillMigrations": {
+      "commandName": "Project",
+      "commandLineArgs": "migrations backfill  --project ..\\..\\..\\..\\..\\samples\\Sable.Samples.GettingStarted\\Sable.Samples.GettingStarted.csproj ",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
+    },
+    "CreateScript": {
+      "commandName": "Project",
+      "commandLineArgs": "migrations script  --project ..\\..\\..\\..\\..\\samples\\Sable.Samples.GettingStarted\\Sable.Samples.GettingStarted.csproj ",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
+    },
+    "UpdateDatabase": {
+      "commandName": "Project",
+      "commandLineArgs": "database update  \"Host=localhost;Port=5432;Database=orders;Username=postgres;password=P0stG&e$;SSL Mode=Disable\" --project ..\\..\\..\\..\\..\\samples\\Sable.Samples.GettingStarted\\Sable.Samples.GettingStarted.csproj  ",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
+    }
+  }
+}

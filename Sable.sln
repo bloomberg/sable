@@ -1,0 +1,139 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31423.177
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{719809C2-A551-4C4A-9EFD-B10FB5E35BC0}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{F20E2797-D1E3-4321-91BB-FAE54954D2A0}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		build.cake = build.cake
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		global.json = global.json
+		.editorconfig = .editorconfig
+		.config\dotnet-tools.json = .config\dotnet-tools.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentation", "{7EDFA103-DB69-4C88-9DE4-97ADBF8253A1}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E1B24F25-B8A4-46EE-B7EB-7803DCFC543F}"
+	ProjectSection(SolutionItems) = preProject
+		tests\Directory.Build.props = tests\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{26F71F5B-2940-4FB0-9681-A76060CBCEF9}"
+	ProjectSection(SolutionItems) = preProject
+		images\Banner.png = images\Banner.png
+		images\Hero.png = images\Hero.png
+		images\Icon.png = images\Icon.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{566DF0E2-1288-4083-9B55-4C8B69BB1432}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE\BUG_REPORT.yml = .github\ISSUE_TEMPLATE\BUG_REPORT.yml
+		.github\ISSUE_TEMPLATE\FEATURE_REQUEST.yml = .github\ISSUE_TEMPLATE\FEATURE_REQUEST.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{0555C737-CE4B-4C78-87AB-6296E1E32D01}"
+	ProjectSection(SolutionItems) = preProject
+		.github\CODEOWNERS = .github\CODEOWNERS
+		.github\release-drafter.yml = .github\release-drafter.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloombergLP.Sable", "src\BloombergLP.Sable\BloombergLP.Sable.csproj", "{FF1F5A44-8B89-4316-AD77-E1C56CF0655E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{EFE1E5ED-D337-4874-82EC-D9FA0BC7D3AB}"
+	ProjectSection(SolutionItems) = preProject
+		.github\release-drafter.yml = .github\release-drafter.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{841C67EF-BBB2-4730-8E29-22FF3FD54306}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build.yml = .github\workflows\build.yml
+		.github\workflows\release-drafter.yml = .github\workflows\release-drafter.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Cli", "src\BloombergLP.Sable.Cli\BloombergLP.Sable.Cli.csproj", "{5AFD0604-B5BD-4E96-98E1-9ADC13069BCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{5934E500-E691-4C28-A8A5-119E9786F2AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Samples.Core", "samples\BloombergLP.Sable.Samples.Core\BloombergLP.Sable.Samples.Core.csproj", "{0E11EECD-333F-4FB5-A9C1-D4D71223C96D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Samples.GettingStarted", "samples\BloombergLP.Sable.Samples.GettingStarted\BloombergLP.Sable.Samples.GettingStarted.csproj", "{35170F5E-7773-4C94-A297-D0DC4E92A9CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Samples.MultipleDatabases", "samples\BloombergLP.Sable.Samples.MultipleDatabases\BloombergLP.Sable.Samples.MultipleDatabases.csproj", "{0741B165-9DFA-49EB-B91C-7DECD6584B7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Samples.MultiTenancy", "samples\BloombergLP.Sable.Samples.MultiTenancy\BloombergLP.Sable.Samples.MultiTenancy.csproj", "{1DB49A91-FA54-4534-9B63-312DC30F98B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Cli.Tests", "Tests\BloombergLP.Sable.Cli.Tests\BloombergLP.Sable.Cli.Tests.csproj", "{03FA826C-6DF3-465F-A1BE-83BA55156F74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Tests", "Tests\BloombergLP.Sable.Tests\BloombergLP.Sable.Tests.csproj", "{65E71BD0-E5CD-42A2-959D-B5D74A655AF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF1F5A44-8B89-4316-AD77-E1C56CF0655E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF1F5A44-8B89-4316-AD77-E1C56CF0655E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF1F5A44-8B89-4316-AD77-E1C56CF0655E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF1F5A44-8B89-4316-AD77-E1C56CF0655E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AFD0604-B5BD-4E96-98E1-9ADC13069BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AFD0604-B5BD-4E96-98E1-9ADC13069BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AFD0604-B5BD-4E96-98E1-9ADC13069BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AFD0604-B5BD-4E96-98E1-9ADC13069BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E11EECD-333F-4FB5-A9C1-D4D71223C96D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E11EECD-333F-4FB5-A9C1-D4D71223C96D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E11EECD-333F-4FB5-A9C1-D4D71223C96D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E11EECD-333F-4FB5-A9C1-D4D71223C96D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35170F5E-7773-4C94-A297-D0DC4E92A9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35170F5E-7773-4C94-A297-D0DC4E92A9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35170F5E-7773-4C94-A297-D0DC4E92A9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35170F5E-7773-4C94-A297-D0DC4E92A9CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0741B165-9DFA-49EB-B91C-7DECD6584B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0741B165-9DFA-49EB-B91C-7DECD6584B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0741B165-9DFA-49EB-B91C-7DECD6584B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0741B165-9DFA-49EB-B91C-7DECD6584B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DB49A91-FA54-4534-9B63-312DC30F98B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB49A91-FA54-4534-9B63-312DC30F98B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB49A91-FA54-4534-9B63-312DC30F98B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB49A91-FA54-4534-9B63-312DC30F98B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FA826C-6DF3-465F-A1BE-83BA55156F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FA826C-6DF3-465F-A1BE-83BA55156F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FA826C-6DF3-465F-A1BE-83BA55156F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FA826C-6DF3-465F-A1BE-83BA55156F74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E71BD0-E5CD-42A2-959D-B5D74A655AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E71BD0-E5CD-42A2-959D-B5D74A655AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E71BD0-E5CD-42A2-959D-B5D74A655AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E71BD0-E5CD-42A2-959D-B5D74A655AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{566DF0E2-1288-4083-9B55-4C8B69BB1432} = {0555C737-CE4B-4C78-87AB-6296E1E32D01}
+		{0555C737-CE4B-4C78-87AB-6296E1E32D01} = {7EDFA103-DB69-4C88-9DE4-97ADBF8253A1}
+		{FF1F5A44-8B89-4316-AD77-E1C56CF0655E} = {719809C2-A551-4C4A-9EFD-B10FB5E35BC0}
+		{EFE1E5ED-D337-4874-82EC-D9FA0BC7D3AB} = {F20E2797-D1E3-4321-91BB-FAE54954D2A0}
+		{841C67EF-BBB2-4730-8E29-22FF3FD54306} = {EFE1E5ED-D337-4874-82EC-D9FA0BC7D3AB}
+		{5AFD0604-B5BD-4E96-98E1-9ADC13069BCC} = {719809C2-A551-4C4A-9EFD-B10FB5E35BC0}
+		{0E11EECD-333F-4FB5-A9C1-D4D71223C96D} = {5934E500-E691-4C28-A8A5-119E9786F2AE}
+		{35170F5E-7773-4C94-A297-D0DC4E92A9CA} = {5934E500-E691-4C28-A8A5-119E9786F2AE}
+		{0741B165-9DFA-49EB-B91C-7DECD6584B7A} = {5934E500-E691-4C28-A8A5-119E9786F2AE}
+		{1DB49A91-FA54-4534-9B63-312DC30F98B7} = {5934E500-E691-4C28-A8A5-119E9786F2AE}
+		{03FA826C-6DF3-465F-A1BE-83BA55156F74} = {E1B24F25-B8A4-46EE-B7EB-7803DCFC543F}
+		{65E71BD0-E5CD-42A2-959D-B5D74A655AF8} = {E1B24F25-B8A4-46EE-B7EB-7803DCFC543F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73F36209-F8D6-4066-8951-D97729F773CF}
+	EndGlobalSection
+EndGlobal

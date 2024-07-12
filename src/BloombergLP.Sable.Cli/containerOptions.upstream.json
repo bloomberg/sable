@@ -1,0 +1,17 @@
+{
+  "Image": "postgres:15.1",
+  "PortBindings": [
+    {
+      "HostPort": 5470,
+      "ContainerPort": 5432
+    }
+  ],
+  "EnvironmentVariables": {
+    "PGPORT": "5432",
+    "POSTGRES_DB": "postgres",
+    "POSTGRES_USER": "postgres",
+    "POSTGRES_PASSWORD": "postgres"
+    
+  },
+  "ConnectionString": "Host=localhost;Port=5470;Username=postgres;Password=postgres;Database=postgres"
+}

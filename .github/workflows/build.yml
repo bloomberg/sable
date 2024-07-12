@@ -1,0 +1,104 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+
+env:
+  # Disable the .NET logo in the console output.
+  DOTNET_NOLOGO: true
+  # Disable the .NET first time experience to skip caching NuGet packages and speed up the build.
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  # Disable sending .NET CLI telemetry to Microsoft.
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  # Set the build number in MinVer.
+  MINVERBUILDMETADATA: build.${{github.run_number}}
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3.0.2
+        with:
+          lfs: true
+          fetch-depth: 0
+      - name: "Install .NET Core SDK"
+        uses: actions/setup-dotnet@v2.1.0
+      - name: "Dotnet Tool Restore"
+        run: dotnet tool restore
+        shell: bash
+      - name: "Dotnet Cake Build"
+        run: dotnet cake --target=Build
+        shell: bash
+      - name: "Dotnet Cake Test"
+        run: dotnet cake --target=Test
+        shell: bash
+      - name: "Dotnet Cake Pack"
+        run: dotnet cake --target=Pack
+        shell: bash
+      - name: "Publish Artifacts"
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: "BuildArtifacts"
+          path: "./Artifacts"
+  
+  push-github-packages:
+    name: "Push GitHub Packages"
+    needs: build
+    if: github.ref == 'refs/heads/main' || github.event_name == 'release'
+    environment:
+      name: "GitHub Packages"
+      url: https://github.com/bloomberg/sable/packages
+    permissions:
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Download Artifact"
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: "BuildArtifacts"
+      - name: "Dotnet NuGet Add Source"
+        run: dotnet nuget add source https://nuget.pkg.github.com/bloomberg/index.json --name GitHub --username bloomberg --password ${{secrets.GITHUB_TOKEN}} --store-password-in-clear-text
+        shell: bash
+      - name: "Dotnet NuGet Push"
+        run: |
+          for package in *.nupkg; do
+            dotnet nuget push "$package" \
+            --source GitHub \
+            --skip-duplicate \
+            --api-key ${{ github.token }}
+          done
+        shell: bash
+
+  push-nuget:
+    name: "Push NuGet Packages"
+    needs: build
+    if: github.event_name == 'release'
+    environment:
+      name: "NuGet"
+      url: https://www.nuget.org/packages/sable
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Download Artifact"
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: "BuildArtifacts"
+      - name: "Dotnet NuGet Push"
+        run: |
+          for package in *.nupkg; do
+            if [[ "$package" != *preview* ]]; then
+              dotnet nuget push "$package" \
+                --source https://api.nuget.org/v3/index.json \
+                --skip-duplicate \
+                --api-key ${{ secrets.NUGET_API_KEY }};
+            fi;
+          done
+        shell: bash
