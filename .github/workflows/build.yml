@@ -49,34 +49,6 @@ jobs:
         with:
           name: "BuildArtifacts"
           path: "./Artifacts"
-  
-  push-github-packages:
-    name: "Push GitHub Packages"
-    needs: build
-    if: github.ref == 'refs/heads/main' || github.event_name == 'release'
-    environment:
-      name: "GitHub Packages"
-      url: https://github.com/bloomberg/sable/packages
-    permissions:
-      packages: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Download Artifact"
-        uses: actions/download-artifact@v3.0.0
-        with:
-          name: "BuildArtifacts"
-      - name: "Dotnet NuGet Add Source"
-        run: dotnet nuget add source https://nuget.pkg.github.com/bloomberg/index.json --name GitHub --username bloomberg --password ${{secrets.GITHUB_TOKEN}} --store-password-in-clear-text
-        shell: bash
-      - name: "Dotnet NuGet Push"
-        run: |
-          for package in *.nupkg; do
-            dotnet nuget push "$package" \
-            --source GitHub \
-            --skip-duplicate \
-            --api-key ${{ github.token }}
-          done
-        shell: bash
 
   push-nuget:
     name: "Push NuGet Packages"
