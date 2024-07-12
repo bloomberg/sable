@@ -73,9 +73,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Samples.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Samples.MultiTenancy", "samples\BloombergLP.Sable.Samples.MultiTenancy\BloombergLP.Sable.Samples.MultiTenancy.csproj", "{1DB49A91-FA54-4534-9B63-312DC30F98B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Cli.Tests", "Tests\BloombergLP.Sable.Cli.Tests\BloombergLP.Sable.Cli.Tests.csproj", "{03FA826C-6DF3-465F-A1BE-83BA55156F74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Cli.Tests", "tests\BloombergLP.Sable.Cli.Tests\BloombergLP.Sable.Cli.Tests.csproj", "{03FA826C-6DF3-465F-A1BE-83BA55156F74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Tests", "Tests\BloombergLP.Sable.Tests\BloombergLP.Sable.Tests.csproj", "{65E71BD0-E5CD-42A2-959D-B5D74A655AF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloombergLP.Sable.Tests", "tests\BloombergLP.Sable.Tests\BloombergLP.Sable.Tests.csproj", "{65E71BD0-E5CD-42A2-959D-B5D74A655AF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
