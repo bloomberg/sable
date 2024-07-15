@@ -28,7 +28,7 @@ Before starting, ensure the following prerequisites are met:
 - The **Sable** .NET tool is installed by running the following command:
 
 ```bash
-dotnet tool install -g BloombergLP.Sable.Cli
+dotnet tool install -g Sable.Cli
 ```
 
 See [.NET tools](https://learn.microsoft.com/en-us/dotnet/core/tools/global-tools) to learn more about how .NET tools work.
@@ -48,7 +48,7 @@ dotnet new webapi
 - Configure Marten along with its command line tooling support.
 - Add **Sable** integration support to the project:
 ```bash
-dotnet add package BloombergLP.Sable
+dotnet add package Sable
 ```
 
 Now for the fun part. Replace whatever overload of `AddMarten` you're using with `AddMartenWithSableSupport`. That's all it takes to complete the integration.
@@ -57,8 +57,8 @@ At this point, you should have a configuration that looks something like this:
 ```c#
 using Marten;
 using Oakton;
-using BloombergLP.Sable.Extensions;
-using BloombergLP.Sable.Samples.Core;
+using Sable.Extensions;
+using Sable.Samples.Core;
 using Weasel.Core;
 
 var builder = WebApplication.CreateBuilder(args);

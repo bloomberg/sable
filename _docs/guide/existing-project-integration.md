@@ -15,8 +15,8 @@ Once those prerequisites are met, you're all set to go.
 ```c#
 using Marten;
 using Oakton;
-using BloombergLP.Sable.Extensions;
-using BloombergLP.Sable.Samples.Core;
+using Sable.Extensions;
+using Sable.Samples.Core;
 using Weasel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
