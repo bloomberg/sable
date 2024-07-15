@@ -6,7 +6,7 @@
 
 # Sable ⚡
 
-> Database Migration Management Tool for Marten
+Database Migration Management Tool for [Marten](https://github.com/JasperFx/marten)
 
 [Sable (*Martes zibellina*)](https://en.wikipedia.org/wiki/Sable) is a species of marten.
 
