@@ -31,7 +31,9 @@ jobs:
           lfs: true
           fetch-depth: 0
       - name: "Install .NET Core SDK"
-        uses: actions/setup-dotnet@v2.1.0
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
       - name: "Dotnet Tool Restore"
         run: dotnet tool restore
         shell: bash
@@ -45,7 +47,7 @@ jobs:
         run: dotnet cake --target=Pack
         shell: bash
       - name: "Publish Artifacts"
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v4
         with:
           name: "BuildArtifacts"
           path: "./Artifacts"
