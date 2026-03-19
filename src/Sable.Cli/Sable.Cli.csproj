@@ -13,7 +13,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Npgsql" Version="8.0.6" />
-    <PackageReference Include="Scriban" Version="5.7.0" />
+    <PackageReference Include="Scriban" Version="6.6.0" />
     <PackageReference Include="Spectre.Console" Version="0.47.0" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.47.0" />
     <PackageReference Include="Testcontainers" Version="3.3.0" />
