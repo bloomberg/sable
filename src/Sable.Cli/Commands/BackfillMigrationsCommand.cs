@@ -20,7 +20,7 @@ public class BackfillMigrationsCommand : AsyncCommand<BackfillMigrationsCommand.
         _consoleLogger = consoleLogger ?? throw new ArgumentNullException(nameof(consoleLogger));
     }
 
-    public override async Task<int> ExecuteAsync(CommandContext context, Settings settings)
+    protected override async Task<int> ExecuteAsync(CommandContext context, Settings settings, CancellationToken cancellationToken)
     {
         var script = await _martenMigrationManager.CreateBackfillMigrationScript(settings.ProjectFilePath, settings.DatabaseName);
         var scriptFilePath = settings.Output;
@@ -33,7 +33,7 @@ public class BackfillMigrationsCommand : AsyncCommand<BackfillMigrationsCommand.
             scriptFilePath = Path.Combine(projectDirectory, "sable", settings.DatabaseName,
                 scriptName);
         }
-        await File.WriteAllTextAsync(scriptFilePath, script);
+        await File.WriteAllTextAsync(scriptFilePath, script, cancellationToken);
         _consoleLogger.LogInfo($"Successfully saved backfill script to '{scriptFilePath}' file.");
         return 0;
     }

@@ -20,7 +20,7 @@ public class CreateMigrationScriptCommand : AsyncCommand<CreateMigrationScriptCo
         _consoleLogger = consoleLogger ?? throw new ArgumentNullException(nameof(consoleLogger));
     }
 
-    public override async Task<int> ExecuteAsync(CommandContext context, Settings settings)
+    protected override async Task<int> ExecuteAsync(CommandContext context, Settings settings, CancellationToken cancellationToken)
     {
         var script = await _martenMigrationManager.CreateMigrationScript(settings.ProjectFilePath, settings.DatabaseName, settings.From, settings.To);
         var scriptFilePath = settings.Output;
@@ -36,7 +36,7 @@ public class CreateMigrationScriptCommand : AsyncCommand<CreateMigrationScriptCo
         var fileInfo = new FileInfo(scriptFilePath);
         var scriptsDirectory = fileInfo.DirectoryName;
         Directory.CreateDirectory(scriptsDirectory!);
-        await File.WriteAllTextAsync(scriptFilePath, script);
+        await File.WriteAllTextAsync(scriptFilePath, script, cancellationToken);
         _consoleLogger.LogInfo($"Successfully saved migration script to '{scriptFilePath}' file.");
         return 0;
     }

@@ -22,7 +22,7 @@ public class AddMigrationCommand : AsyncCommand<AddMigrationCommand.Settings>
             martenMigrationManager ?? throw new ArgumentNullException(nameof(martenMigrationManager));
     }
 
-    public override async Task<int> ExecuteAsync(CommandContext context, Settings settings)
+    protected override async Task<int> ExecuteAsync(CommandContext context, Settings settings, CancellationToken cancellationToken)
     {
         var result = await _martenMigrationManager.AddMigration(settings.ProjectFilePath, settings.DatabaseName, settings.Name, settings.PostgresContainerOptions, settings.NoIdempotenceWrapper, settings.NoTransactionWrapper);
         return result;
