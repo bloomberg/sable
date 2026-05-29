@@ -55,14 +55,14 @@ Now for the fun part. Replace whatever overload of `AddMarten` you're using with
 
 At this point, you should have a configuration that looks something like this:
 ```c#
+using JasperFx;
 using Marten;
-using Oakton;
 using Sable.Extensions;
 using Sable.Samples.Core;
 using Weasel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.ApplyOaktonExtensions();
+builder.Host.ApplyJasperFxExtensions();
 builder.Services.AddMartenWithSableSupport(_ =>
 {
     var options = new StoreOptions();
@@ -77,7 +77,7 @@ builder.Services.AddMartenWithSableSupport(_ =>
 var app = builder.Build();
 app.MapGet("/", () => "💪🏾");
 
-return await app.RunOaktonCommands(args);
+return await app.RunJasperFxCommands(args);
 ```
 
 ### Initialize Migration Infrastructure

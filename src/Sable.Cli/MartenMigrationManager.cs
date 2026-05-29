@@ -93,8 +93,14 @@ public class MartenMigrationManager : IMartenMigrationManager
             Path.Combine(projectDirectory, "sable", databaseName, "migrations", migrationFileName);
         //projectFilePath = projectFilePath.Replace(@"\\", @"\").Replace(@"\", @"\\");
         //migrationFilePath = migrationFilePath.Replace(@"\\", @"\").Replace(@"\", @"\\");
+
+        // Note:
+        // The db-patch command expects a DatabaseUri or SubjectUri for the database parameter. "marten://store/" is the SubjectUri.
+        //
+        // TODO: Check if we need to change to the container database uri, something like $"postgresql://localhost/{databaseName}/{schema}"
+        // During testing, {schema} didn't appear necessary
         var patchCommandExecutionResult = await CliWrap.Cli.Wrap("dotnet")
-            .WithArguments(new[] { "run", "--project", projectFilePath, "--", "marten-patch", "--database", $"{databaseName}", migrationFilePath })
+            .WithArguments(new[] { "run", "--project", projectFilePath, "--", "db-patch", "--database", "marten://store/", migrationFilePath })
             .WithWorkingDirectory(projectDirectory)
             .WithEnvironmentVariables(new Dictionary<string, string>
             {
